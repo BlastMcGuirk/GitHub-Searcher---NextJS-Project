@@ -19,10 +19,10 @@ interface LanguagePillProps {
  */
 export const LanguagePill = (props: LanguagePillProps) => {
     const { language } = props;
-    const tooltipTitle = language.lines === 0 ?
-        '' :
+    const tooltipText = language.lines === 0 ?
+        undefined :
         'Lines: ' + language.lines;
     return (
-        <Pill pillText={language.language} tooltipTitle={tooltipTitle} />
+        <Pill pillText={language.language} tooltipText={tooltipText} />
     )
 }

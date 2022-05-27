@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../../../styles/RepoPage.module.css'
-import Tabs from '@mui/material/Tabs'
-import Tab from '@mui/material/Tab'
 import { Repo } from '../../common/types/Repo'
 import { fetchRepo, getMarkdownDisplay } from '../../common/utils/githubFetch'
 import { Language } from '../../common/types/Language'
@@ -12,6 +10,7 @@ import { Commit } from '../../common/types/Commit'
 import { RepoInfoPanel } from '../../common/components/Panel/RepoInfoPanel'
 import { READMEPanel } from '../../common/components/Panel/READMEPanel'
 import { CommitsPanel } from '../../common/components/Panel/CommitsPanel'
+import { Tabs } from '../../common/components/tabs/Tabs'
 
 /**
  * Props for the Repo page
@@ -167,11 +166,10 @@ const RepoPage: NextPage<RepoPageProps> = (props: RepoPageProps) => {
         </a>
 
         {/* Display tabs to switch between content */}
-        <Tabs value={selectedTab} onChange={(e, t: number) => setSelectedTab(t)}>
-          <Tab label={"Repo Info"} />
-          <Tab label={"README"} />
-          <Tab label={"Commits"} />
-        </Tabs>
+        <Tabs
+          selected={selectedTab} 
+          onChange={(tab: number) => setSelectedTab(tab)} 
+          tabNames={['Repo Info', 'README', 'Commits']} />
 
         {/* The repo info panel */}
         <RepoInfoPanel 

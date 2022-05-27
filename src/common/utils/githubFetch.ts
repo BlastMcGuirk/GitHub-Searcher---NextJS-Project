@@ -75,10 +75,10 @@ export async function getMarkdownDisplay(markdownText: string) {
     let URL = "https://api.github.com/markdown";
 
     // Decode the markdown
-    let bodyText = window.atob(markdownText)
-    // The first 3 characters of a github markdown file are non ASCII, 
-    // so remove them.
-        .substring(3);
+    let bodyText = window.atob(markdownText);
+
+    // Remove all non-ascii characters (ran in to problems rendering)
+    bodyText = bodyText.replace(/[^\x00-\x7F]/g, "");
 
     // Make the POST request to convert markdown to HTML
     return await (await fetch(URL, {

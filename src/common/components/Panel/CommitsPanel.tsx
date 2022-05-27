@@ -28,11 +28,13 @@ export const CommitsPanel = (props: PanelProps & CommitsPanelProps) => {
     const { commits, commitsStatus } = props;
     return (
         <Panel hidden={props.hidden}>
-            <div className={styles.list}>
-                {commitsStatus === 'Pending' && <LoadingSpinner />}
-                {commitsStatus === 'Failed' && "Failed to load"}
-                {commitsStatus === 'Success' && commits.map(commit => <CommitRow key={commit.url} commit={commit}/>)}
-            </div>
+            {commitsStatus === 'Pending' && <LoadingSpinner />}
+            {commitsStatus === 'Failed' && "Failed to load"}
+            {commitsStatus === 'Success' && (
+                <div className={styles.list}>
+                    {commits.map(commit => <CommitRow key={commit.url} commit={commit}/>)}
+                </div>
+            )}
         </Panel>
     )
 }

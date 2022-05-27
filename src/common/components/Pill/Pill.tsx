@@ -1,10 +1,20 @@
 import React from 'react'
+import { Tooltip } from '../Tooltip/Tooltip';
 import styles from './Pill.module.css';
-import Tooltip from '@mui/material/Tooltip';
 
+/**
+ * Props for the Pill component
+ */
 interface PillProps {
+    /**
+     * The text for the inside of the pill
+     */
     pillText: string;
-    tooltipTitle?: string;
+    /**
+     * The text for the tooltip or undefined if no tooltip
+     * should appear for the pill
+     */
+    tooltipText?: string;
 }
 
 /**
@@ -13,10 +23,10 @@ interface PillProps {
  * @returns A pill that displays some info with an optional tooltip
  */
 export const Pill = (props: PillProps) => {
-    const { pillText, tooltipTitle } = props;
+    const { pillText, tooltipText } = props;
     return (
-        // Blank titles make the tooltip not show up
-        <Tooltip title={tooltipTitle ?? ''} arrow>
+        // Undefined text makes the tooltip not appear
+        <Tooltip text={tooltipText}>
             <div className={styles.pill}>
                 <p>{pillText}</p>
             </div>
