@@ -1,0 +1,40 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.list > * {
+    margin: 1rem 0;
+}
+
+.commitRow {
+    padding: 1rem;
+    border: 2px solid #767B91;
+    border-radius: 5px;
+    transition: border-color .5s ease;
+}
+
+.commitRow:hover, .commitRow:hover .header,
+.commitRow:focus, .commitRow:focus .header,
+.commitRow:active, .commitRow:active .header {
+    border-color: #0060DF;
+    color: #0060DF;
+}
+
+.header {
+    font-size: 1.2rem;
+    color: inherit;
+    margin: 0;
+    transition: color .5s ease;
+}
+
+.subHeader {
+    font-size: 1rem;
+    color: #767B91;
+    display: flex;
+}
+
+.subHeader p {
+    margin: 0 2rem 0 0;
+}

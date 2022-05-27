@@ -1,0 +1,43 @@
+.rowDisplay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.publicity {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.starCount {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    margin-left: 1rem;
+}
+
+.infoGroup {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.pillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pillsContainer > * {
+    margin: .2rem .1rem;
+}
+
+.infoGroup p {
+    margin: 0;
+    text-align: center;
+}

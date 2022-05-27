@@ -1,0 +1,57 @@
+.card {
+    margin: 1rem;
+    padding: .5rem;
+    border: 2px solid #767B91;
+    border-radius: 5px;
+    width: 450px;
+    min-height: 175px;
+    transition: border-color .5s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover, .card:hover .name,
+.card:focus, .card:focus .name,
+.card:active, .card:active .name {
+    border-color: #0060DF;
+}
+
+.name {
+    color: #0060DF;
+    font-size: 1.25rem;
+    margin: 0;
+    padding-bottom: .3rem;
+    border-bottom: 2px solid #767B91;
+    transition: border-color .5s ease;
+}
+
+.description {
+    margin: .5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    height: 100%;
+}
+
+.cardFooter {
+    display: flex;
+    flex: 1;
+    margin-top: .5rem;
+}
+
+.publicity {
+    display: flex;
+    align-items: center;
+}
+
+.starCount {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+@media (max-width: 600px) {
+    .card {
+        margin: 1rem 0;
+        width: 100%;
+    }
+  }
