@@ -1,4 +1,4 @@
-This is my Assessment for CrateBind. I created a web application using the Next.js framework boostrapped with `create-next-app`.
+I created a web application using the Next.js framework boostrapped with `create-next-app`.
 
 ## Prereqs
 
